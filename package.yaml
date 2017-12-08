@@ -1,0 +1,35 @@
+name: haskell-api
+version: '0.1.0.0'
+category: Web
+author: Cameron Gera
+maintainer: example@example.com
+copyright: 2017 Author name here
+license: BSD3
+
+
+ghc-options:
+  - -Wall
+  - -O2
+  - -fwarn-incomplete-uni-patterns
+  - -fwarn-incomplete-record-updates
+  - -fwarn-tabs
+
+# Note: because we are using stackage, the versions of all popular libraries
+# are already fixed for us by the curated package snapshot we are using. Because
+# of this we do not need to specify particular package versions in *this* file.
+# This does not mean package versions are not locked, it just means that someone
+# else has already produced the list of locked versions for us to use. :)
+dependencies:
+  - base >=4.7 && <5
+  - happstack-server
+default-extensions:
+
+executables:
+  api:
+    main: Main.hs
+    source-dirs: api
+    ghc-options:
+      - -threaded
+
+library:
+  source-dirs: api

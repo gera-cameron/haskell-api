@@ -1,0 +1,11 @@
+version: "3"
+services:
+  api:
+    build: ./api
+    volumes:
+      - .:/Users/camerongera/Projects/haskell-api/api
+    working_dir: /Users/camerongera/Projects/haskell-api/api
+    ports:
+      - 8000:8000
+    command: ["stack", "runhaskell", "./start-haskell.hs", "--", "--http-port", "11667"]
+    tty: true
